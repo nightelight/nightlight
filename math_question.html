@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Question</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        #countdown {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #question-image {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        #answer-input {
+            margin-top: 10px;
+        }
+
+        #submit-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+
+        #thank-you-message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #cat-image {
+            max-width: 100%;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pakisagot ang math question na ito in 15 seconds kung hindi, I'll consider your answer as yes:</h1>
+    <div id="countdown">Time left: <span id="timer">15</span> seconds</div>
+    <div id="question-image"><img src="C:\\math.jpg" alt="Math Question"></div>
+    <div id="answer-input">
+        <input type="text" id="answer-input-field" placeholder="Your Answer">
+    </div>
+    <button id="submit-btn" onclick="checkAnswer()">Submit</button>
+    <div id="thank-you-message"></div>
+    <img id="cat-image" src="C:\cat.jpg" alt="Cute Cat Image">
+
+    <script>
+        let timer;
+
+        // Function to start the countdown
+        function startCountdown() {
+            timer = setInterval(function() {
+                const timerValue = parseInt(document.getElementById('timer').textContent);
+                document.getElementById('timer').textContent = timerValue - 1;
+
+                if (timerValue === 1) {
+                    clearInterval(timer);                   
+                    setTimeout(function() {
+                        window.location.href = 'Thankyou.html';
+                    }, 5000); // Redirect after showing the message and cat image for 5 seconds
+                }
+            }, 1000);
+        }
+
+        // Set a timeout for the countdown
+        setTimeout(startCountdown, 1000);
+
+        // Function to check the answer (not doing anything in this case)
+        function checkAnswer() {
+            // You can add answer validation logic here if needed
+        }
+    </script>
+</body>
+</html>
