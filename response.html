@@ -37,11 +37,12 @@
 
         if (response === 'yes') {
             responseMessage.textContent = 'YEAH BOI AMAZING xD';
-            catDogImage.src = 'C:\\cat.jpg';
+            catDogImage.src = 'cat.jpg';
             catDogImage.style.display = 'block';
         } else if (response === 'no') {
             responseMessage.textContent = 'Namisclick ka ata beh';
-
+            catDogImage.src = 'dog.jpg';
+            catDogImage.style.display = 'block';
             // Add buttons for confirmation
             const confirmationButtons = document.createElement('div');
             confirmationButtons.innerHTML = `
